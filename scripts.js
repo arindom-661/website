@@ -51,3 +51,12 @@ const obsErver = new IntersectionObserver((entries) => {
 
 fadeElements.forEach(el => observer.observe(el));
 
+
+
+
+
+
+document.getElementById('hamburger-icon').addEventListener('click', function() {
+  var navbar = document.getElementById('navbar');
+  navbar.classList.toggle('active');
+});
