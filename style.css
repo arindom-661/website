@@ -517,3 +517,172 @@ body {
         height: 120px;
     }
 }
+
+
+
+
+
+
+
+/* Responsive Design */
+
+/* For mobile screens (up to 768px) */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar .nav-links li {
+        display: block;
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+
+    .navbar.scrolled .nav-links {
+        display: flex;
+    }
+
+    /* Hero Section */
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero .cta-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    /* About Section */
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about .content, .about .image-container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .about img {
+        max-width: 90%;
+    }
+
+    /* Academics Section */
+    .academics .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .academics .card {
+        max-width: 100%;
+    }
+
+    /* News Section */
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Statistics Section */
+    .statistics-container, .class-statistics-container {
+        flex-direction: column;
+    }
+
+    .stat-box {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Contact Section */
+    .contact p {
+        font-size: 1rem;
+    }
+}
+
+/* For tablets (up to 1024px) */
+@media (max-width: 1024px) {
+    /* Hero Section */
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .hero .cta-btn {
+        padding: 0.7rem 1.8rem;
+        font-size: 1.1rem;
+    }
+
+    /* About Section */
+    .about .content {
+        max-width: 60%;
+    }
+
+    .about .image-container {
+        max-width: 30%;
+    }
+
+    /* Academics Section */
+    .academics .cards-container {
+        flex-direction: column;
+    }
+
+    .academics .card {
+        max-width: 90%;
+    }
+
+    /* News Section */
+    .news-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Hide navbar links on small screens */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: 30px;
+        color: white;
+        background-color: #333;
+        padding: 10px;
+    }
+}
+
+/* Hamburger icon should be hidden on larger screens */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+}
