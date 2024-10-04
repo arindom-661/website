@@ -1,62 +1,21 @@
+// Toggle the hamburger menu
+const hamburgerIcon = document.getElementById('hamburger-icon');
+const navLinks = document.querySelector('.nav-links');
+
+hamburgerIcon.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
 // Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+    const targetId = this.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    window.scrollTo({
+      top: targetSection.offsetTop,
+      behavior: 'smooth'
     });
+    navLinks.classList.remove('active');
   });
-});
-
-// Navbar background change on scroll
-window.addEventListener('scroll', () => {
-  const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-});
-
-// Fade-in animations on scroll
-const fadeElements = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('fade-in-visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.1
-});
-
-fadeElements.forEach(el => observer.observe(el));
-
-// Your existing JavaScript code
-
-// Fade-in animations on scroll
-const fadEElements = document.querySelectorAll('.fade-in');
-const obsErver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('fade-in-visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.1
-});
-
-fadeElements.forEach(el => observer.observe(el));
-
-
-
-
-
-
-document.getElementById('hamburger-icon').addEventListener('click', function() {
-  var navbar = document.getElementById('navbar');
-  navbar.classList.toggle('active');
 });
